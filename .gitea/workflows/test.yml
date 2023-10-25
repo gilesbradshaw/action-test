@@ -16,7 +16,8 @@ jobs:
           ../tea pr ls -o=simple
       - name: Hello world action step
         id: hello
-        uses: ./.gitea/actions/docker
+        #uses: ./.gitea/actions/docker
+        uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
       # Use the output from the `hello` step
