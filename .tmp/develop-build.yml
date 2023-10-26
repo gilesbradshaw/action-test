@@ -12,7 +12,7 @@ jobs:
       - uses: http://sigyl.com:3000/actions/checkout@v3.5.4
         with:
           token: ${{ secrets.BOT_TOKEN }}
-          fetch-depth: '10'
+          fetch-depth: '1'
       - env: env
         run: printenv
       - uses: ./.github/actions/tea

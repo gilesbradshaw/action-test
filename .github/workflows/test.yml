@@ -15,6 +15,13 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat!!'
           token: ${{ secrets.BOT_TOKEN }}
+      - name: tea
+        id: tea
+        uses: ./.github/actions/docker-tea
+        #uses: alpine:3.14
+        with:
+          who-to-greet: 'Mona the Octocat!!'
+          token: ${{ secrets.BOT_TOKEN }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
