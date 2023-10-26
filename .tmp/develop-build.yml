@@ -15,7 +15,7 @@ jobs:
           fetch-depth: '10'
       - env: env
         run: printenv
-      - uses: ./.gitea/actions/tea
+      - uses: ./.github/actions/tea
         with:
           token: ${{ secrets.BOT_TOKEN }}
       - uses: http://sigyl.com:3000/actions/setup-node@v3

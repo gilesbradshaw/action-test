@@ -9,7 +9,7 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
       - name: Hello world action step
         id: hello
-        uses: ./.gitea/actions/docker
+        uses: ./.github/actions/docker
         #uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
