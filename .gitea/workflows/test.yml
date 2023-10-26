@@ -4,6 +4,12 @@ on:
 jobs:
   first:
     steps:
+      - name: Hello world action step
+        id: hello
+        uses: ./.gitea/actions/docker
+        #uses: alpine:3.14
+        with:
+          who-to-greet: 'Mona the Octocat!!'
       - uses: http://sigyl.com:3000/actions/checkout@v3.5.4
         with:
           token: ${{ secrets.BOT_TOKEN }}
@@ -14,12 +20,6 @@ jobs:
         run: |
           pwd
           ../tea pr ls -o=simple
-      - name: Hello world action step
-        id: hello
-        #uses: ./.gitea/actions/docker
-        uses: alpine:3.14
-        with:
-          who-to-greet: 'Mona the Octocat!!'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
