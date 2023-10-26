@@ -8,16 +8,17 @@ jobs:
       - uses: RouxAntoine/checkout@v3.5.4
         #with:
         #  token: ${{ secrets.BOT_TOKEN }}
-      - name: Hello world action step
+      - name: Hello world 2 action step
         id: hello
-        uses: ./.github/actions/docker
+        uses: ./.github/actions/docker-tea
         #uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
           token: ${{ secrets.BOT_TOKEN }}
-      - name: Hello world 2 action step
+
+      - name: Hello world action step
         id: hello2
-        uses: ./.github/actions/docker-tea
+        uses: ./.github/actions/docker
         #uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
