@@ -1,16 +1,17 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: tea
+description: gets tea and logs in
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  token:
+    description: 'token for tea'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  using: "composite"
+  steps:
+    - run: pwd
+    - name: get tea
+      run: curl https://dl.gitea.com/tea/0.9.2/tea-0.9.2-linux-386 --output ../tea
+    - name: chmod
+      run: chmod +x ../tea
+    - name: login
+      run: ../tea login add -n=this --url=${{ github.server_url}} -t=${{ inputs.token}}
+        
