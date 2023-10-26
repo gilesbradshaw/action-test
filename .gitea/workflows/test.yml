@@ -4,14 +4,15 @@ on:
 jobs:
   first:
     steps:
+      - uses: http://sigyl.com:3000/actions/checkout@v3.5.4
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
       - name: Hello world action step
         id: hello
         uses: ./.gitea/actions/docker
         #uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
-      - uses: http://sigyl.com:3000/actions/checkout@v3.5.4
-        with:
           token: ${{ secrets.BOT_TOKEN }}
       - uses: ./.gitea/actions/tea
         with:
