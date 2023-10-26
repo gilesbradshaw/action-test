@@ -15,9 +15,9 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat!!'
           token: ${{ secrets.BOT_TOKEN }}
-      - name: tea
-        id: tea
-        uses: ./.github/actions/docker-tea
+      - name: Hello world 2 action step
+        id: hello2
+        uses: ./.github/actions/docker
         #uses: alpine:3.14
         with:
           who-to-greet: 'Mona the Octocat!!'
